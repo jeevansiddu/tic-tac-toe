@@ -1,0 +1,19 @@
+three scopes - global scope , functional scope , block scope 
+
+var = global and functional scope 
+let , const - global and block scope 
+
+let is better than var - (better memory management)
+
+string :
+    \t, \u - unicode , \n;
+    to read characters ., - > str.charAt(i) || str[1];
+    string immutable
+    .toUpperCase()
+    str.indedxOf('hey')
+    str.includes('11')
+    str.startsWith('He')
+
+    str.substr(1) // hello =>ello
+    str.slice(1) // hello =>ello
+

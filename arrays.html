@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [10, 20, 30, 40, 50, 60];
+      arr.forEach((item) => console.log(item));
+      // it is similar to
+      for (let item of arr) {
+        console.log(item);
+      }
+
+      //find()
+      let obj = [
+        { id: 1, name: "jeevan" },
+        { id: 2, name: "siddharth" },
+        { id: 3, name: "mahir" },
+      ];
+      let k = obj.find((item) => item.name == "siddharth");
+      console.log(k);
+      //it is similar to
+      for (let item of obj) {
+        if (item.name == "siddharth") {
+          console.log(item);
+        }
+      }
+
+      //filter()
+      let emp = obj.filter((item) => item.id >= 2);
+      console.log(emp);
+
+      //map()
+      let twotimesarr = arr.map((item) => item * 2);
+      console.log(arr);
+      console.log(twotimesarr);
+
+      //join
+      console.log(arr.join(":"));
+
+      //reduce - refer video - 192
+
+      //sort()
+      arr.sort(); // this wont sort number ., so inorder to sort numbers we
+      // override the cpompare function
+
+      //to work even for numbers
+      let arr1 = [10, 5, 7, 2, 20, 100, 50];
+      arr1.sort(compare);
+      // or also arr1.sort((a,b)=>a-b);
+      //similarly for objects we can do like arr1.sort((a,b)=>a.id-b.id); or || a.name>b.name? 1:-1);
+      function compare(a, b) {
+        if (a > b) return 1;
+        if (a < b) return -1;
+        return 0;
+        // or else just return a-b;
+      }
+      console.log(arr1);
+    </script>
+  </body>
+</html>

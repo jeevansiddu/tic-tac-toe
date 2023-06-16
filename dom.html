@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="p1">hello</p>
+    <button id="search">search</button>
+    <input type="text" id="key" />
+    <script>
+      console.log(window.innerWidth);
+      let k = document.getElementById("p1");
+      k.setAttribute("class", "p2");
+      let k1 = document.getElementsByClassName("p1")[0];
+      p1.innerHTML = "<h1>Hello</h1>";
+      p1.style.backgroundColor = "red";
+      p1.style.padding = "20px";
+      p1.className = "newp1"; // to set the class name
+
+      // events
+      // click , submit , pageload event
+      let res = document.getElementById("search");
+      res.addEventListener("click", action);
+      // (or) res.onclick = action
+      function action() {
+        console.log("Click");
+      }
+
+      //keyup event to listen to key pressed on input text field
+      let res1 = document.getElementById("key");
+      res1.addEventListener("keyup", function () {
+        console.log(res1.value);
+      });
+    </script>
+  </body>
+</html>

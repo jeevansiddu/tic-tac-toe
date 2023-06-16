@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .item {
+        padding: 0.75rem;
+        border: 0.05rem solid #ddd;
+        width: 14.55rem;
+        /* display: none; */
+        cursor: pointer;
+      }
+      .none {
+        display: none;
+      }
+      .item:hover {
+        background-color: #ddd;
+      }
+      #search {
+        padding: 0.5rem;
+        border: 0.05rem solid #ddd;
+        outline: 0.05rem solid #ddd;
+        margin-bottom: 0.25rem;
+        width: 15rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>XYZ School</h1>
+    <h2>Nominate Class Representative</h2>
+    <label for="search">Find Student</label><br />
+    <input
+      type="text"
+      id="search"
+      placeholder="Enter partial name to search..." />
+    <div class="item">Roland Scheffer</div>
+    <div class="item">Angel League</div>
+    <div class="item">Alayna Wilds</div>
+    <div class="item">Kathi Kawamoto</div>
+    <div class="item">Gertie Walquist</div>
+    <div class="item">Ashlyn Trejo</div>
+    <div class="item">Arlene Rasor</div>
+    <div class="item">Isaac Rideaux</div>
+    <div class="item">Temeka Laurence</div>
+    <div class="item">Kory Atchinson</div>
+    <div class="item">Mireya Campione</div>
+    <div class="item">Inez Ashmore</div>
+    <div class="item">Wan Presutti</div>
+    <div class="item">Junior Roll</div>
+    <div class="item">Selena Sandin</div>
+    <div class="item">Will Mckern</div>
+    <div class="item">Jessi Culwell</div>
+    <div class="item">Sierra Mcgrory</div>
+    <div class="item">Kellye Batres</div>
+    <script>
+      let res = document.getElementById("search");
+      let k = document.getElementsByClassName("item");
+      for (item of k) {
+        item.setAttribute("class", "item none");
+        item.addEventListener("click", itemClick);
+      }
+      function itemClick(e) {
+        console.log(e.target.innerText);
+        let name = e.target.innerText;
+
+        res.value = name;
+        for (let i = 0; i < k.length; i++) {
+          k[i].style.display = "none";
+        }
+      }
+      res.addEventListener("keyup", function () {
+        let k = document.getElementsByClassName("item");
+        // for (item of k) {
+        //   item.setAttribute("class", "item none");
+        // }
+        let val = document.getElementById("search").value.toUpperCase();
+        if (val === "") {
+          for (item of k) {
+            //   console.log(item.innerText);
+            // if (item.innerText.includes(val)) {
+            item.style.display = "none";
+
+            // item.removeAttribute("class", "none");
+            // }
+          }
+          return;
+        }
+        for (item of k) {
+          //   console.log(item.innerText);
+          // if (item.innerText.includes(val)) {
+          item.style.display = "none";
+          // item.removeAttribute("class", "none");
+          // }
+        }
+        for (item of k) {
+          //   console.log(item.innerText);
+          if (item.innerText.toUpperCase().includes(val)) {
+            item.style.display = "block";
+            // item.removeAttribute("class", "none");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

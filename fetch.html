@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      fetch("https://restcountries.com/v3.1/alpha/col")
+        .then((response) => response.json()) // this stage only header data is involved
+        .then((result) => console.log(result));
+
+      //only two ready state .., 1 st then => header received ., 2 nd then response data eceived
+      // fetch internally uses promise to deal with delayed response
+    </script>
+  </body>
+</html>

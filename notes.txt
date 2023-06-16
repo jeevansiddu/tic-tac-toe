@@ -17,3 +17,10 @@ string :
     str.substr(1) // hello =>ello
     str.slice(1) // hello =>ello
 
+
+Arrays:
+    pop()
+    indedxOf()
+    includes()
+    forEach()
+    sort()

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    hello r helllo epidu iirla naan nalla iruken nee epdi irld
+    <!-- console -> object .., log-> function fro that object  -->
+    <script src="scripts.js"></script>
+    <script type="module">
+      import { Gender } from "./js/gender.js";
+      import { Details } from "./js/passenger.js";
+      console.log("heelloo");
+      console.log("World");
+      console.log("Fahrenheit: " + (5 * (9 / 5) + 32));
+      let a = 5,
+        b = 5;
+      console.log("Area of " + a + " x " + b + " Rectangle is: " + a * b);
+      console.log("Percentage of boys is: " + (10 / (10 + 15)) * 100);
+      console.log("Left over apples: " + (19 % 4));
+      console.log(printHello("jeevan"));
+
+      var details = {
+        driver: false,
+        conductor: true,
+      };
+      var passengers = [
+        {
+          fname: "Jeevan",
+          age: 20,
+          alive: true,
+          gender: {
+            code: "M",
+            name: "Male",
+          },
+          content: details,
+          getfullname: function () {
+            var title = this.gender.code == "M" ? "MR." : "Mrs";
+            return title + " " + this.fname;
+          },
+        },
+      ];
+      print(passengers);
+      var category = [
+        {
+          id: 1,
+          code: "BO",
+          Name: "Books",
+        },
+        {
+          id: 2,
+          code: "EL",
+          Name: "Electronics",
+        },
+        {
+          id: 3,
+          code: "AP",
+          Name: "Apparels",
+        },
+        {
+          id: 4,
+          code: "HI",
+          Name: "Household Items",
+        },
+      ];
+
+      var vendors = [
+        {
+          id: 1,
+          name: "Star Enterprise",
+          contact: "7777777777",
+        },
+        {
+          id: 2,
+          name: "Cloudtail Retail Ltd",
+          contact: "8888888888",
+        },
+      ];
+      printcategory(category);
+      console.log(passengers[0].getfullname());
+
+      var male = new Gender("M", "Male");
+      var female = new Gender("F", "Female");
+
+      var passenger = new Details("jeevan", 20, male, 7338773925);
+      console.log(passenger.getfullname());
+      console.log(0b111111); //ob for binary
+      console.log(0xff); // 0x for hexadecimal
+      console.log(0o177); // 0o for octal
+      console.log(isNaN("3a")); // returns true as NaN is not a number
+    </script>
+  </body>
+</html>
